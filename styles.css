@@ -286,6 +286,8 @@ REPO TAB
       font-size: .8rem;
       font-weight: bold;
       color: #4078C0; }
+      #repoMain .repoBlock .repoBlockLeft .repoBlockTitle a {
+        color: #4078C0; }
     #repoMain .repoBlock .repoBlockLeft .repoBlockFork {
       font-size: .45rem; }
       #repoMain .repoBlock .repoBlockLeft .repoBlockFork a {
@@ -330,6 +332,8 @@ ACTIVITY TAB
     font-size: .5rem;
     display: flex;
     align-items: center; }
+    .activityBlock .activityBlockRight > * {
+      margin-right: 0.3em; }
     .activityBlock .activityBlockRight .timeAgo {
       color: #666666;
       font-size: .45rem; }

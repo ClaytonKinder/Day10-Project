@@ -220,7 +220,7 @@
             <div class="repoBlock">
               <div class="repoBlockLeft">
                 <div class="repoBlockTitle">
-                  <%= name %>
+                  <a href="#" class="repoTitle"><%= name %></a>
                 </div>
                 <% if (fork === true) { %>
                 <div class="repoBlockFork">
@@ -264,15 +264,15 @@
                 <span class="mega-octicon octicon-repo"></span>
               </div>
               <div class="activityBlockRight">
-                <a href="#"><%= actor.login %></a>&nbsp;
-                created repository&nbsp;
-                <a href="#"><%= repo.name %></a>&nbsp;
-                &nbsp;<span class="timeAgo"><%= moment(created_at).fromNow() %></span>
+                <a href="#"><%= actor.login %></a>
+                <span>created repository</span>
+                <a href="#"><%= repo.name %></a>
+                <span class="timeAgo"><%= moment(created_at).fromNow() %></span>
               </div>
             <% } %>
             <% if (type === "PushEvent") { %>
               <div class="activityBlockLeft">
-                <span class="mega-octicon octicon-flame"></span>
+                <span class="mega-octicon octicon-git-commit"></span>
               </div>
               <div class="activityBlockRight2">
                 <div class="activityTime">
