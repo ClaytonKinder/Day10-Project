@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Github</title>
+  <link rel="stylesheet" type="text/css" href="bower_components/normalize.css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="bower_components/octicons/octicons/octicons.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div id="navWrapper">
+    <nav>
+      <div id="navLeft">
+        <div>
+          <a href="#"><span class="mega-octicon octicon-mark-github"></span></a>
+        </div>
+        <div>
+          <input type="text" placeholder="Search Github"></input>
+        </div>
+        <div>
+          <a href="#"><span>Explore</span></a>
+        </div>
+        <div>
+          <a href="#"><span>Gist</span></a>
+        </div>
+        <div>
+          <a href="#"><span>Blog</span></a>
+        </div>
+        <div>
+          <a href="#"><span>Help</span></a>
+        </div>
+      </div>
+
+      <div id="navRight">
+        <div id="navProfile">
+          <script type="text/template" class="template" id="navUserTemplate">
+            <a href="#">
+              <div>
+                <img src="<%= avatar_url %>">
+              </div>
+              <div>
+                <%= name %>
+              </div>
+            </a>
+          </script>
+        </div>
+        <div>
+          <a href="#"><span class="mega-octicon octicon-plus"></span></a>
+          <a href="#" class="downArrow"><span class="mega-octicon octicon-triangle-down"></span></a>
+        </div>
+        <div>
+          <a href="#"><span class="mega-octicon octicon-inbox"></span></a>
+        </div>
+        <div>
+          <a href="#"><span class="mega-octicon octicon-gear"></span></a>
+        </div>
+        <div>
+          <a href="#"><span class="mega-octicon octicon-sign-out"></span></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div id="pageWrapper">
+    <aside>
+      <script type="text/template" class="template" id="userDataTemplate">
+        <div id="asideUserInfo">
+          <div id="asideUserImage">
+            <a href="#">
+              <img src="<%= avatar_url %>">
+            </a>
+          </div>
+          <div id="asideUserRealName">
+            <%= name %>
+          </div>
+          <div id="asideUserAccountName">
+            <%= login %>
+          </div>
+        </div>
+        <div id="asideUserCareer">
+          <div>
+            <span class="mega-octicon octicon-circuit-board"></span>
+          </div>
+          <div>
+            <a href="#">Junior Web Developer</a>
+          </div>
+        </div>
+        <div id="asideUserThings">
+          <% if (company !== "") { %>
+          <div>
+            <div>
+              <span class="mega-octicon octicon-organization"></span>
+            </div>
+            <div>
+              <%= company %>
+            </div>
+          </div>
+          <% } %>
+          <% if (location !== "") { %>
+          <div>
+            <div>
+              <span class="mega-octicon octicon-location"></span>
+            </div>
+            <div>
+              <%= location %>
+            </div>
+          </div>
+          <% } %>
+          <% if (blog !== "") { %>
+          <div>
+            <div>
+              <span class="mega-octicon octicon-link"></span>
+            </div>
+            <div>
+              <a href="#"><%= blog %></a>
+            </div>
+          </div>
+          <% } %>
+          <div>
+            <div>
+              <span class="mega-octicon octicon-clock"></span>
+            </div>
+            <div>
+              Joined on <%= moment(created_at).format("MMM Do, YYYY") %>
+            </div>
+          </div>
+        </div>
+        <div id="asideUserStats">
+          <a href="#" id="userFollowers">
+            <div class="userStatsNumber">
+              <%= followers %>
+            </div>
+            <div class="userStatsText">
+              Followers
+            </div>
+          </a>
+          <a href="#" id="userStarred">
+            <div class="userStatsNumber">
+              0
+            </div>
+            <div class="userStatsText">
+              Starred
+            </div>
+          </a>
+          <a href="#" id="userFollowing">
+            <div class="userStatsNumber">
+              <%= following %>
+            </div>
+            <div class="userStatsText">
+              Following
+            </div>
+          </a>
+        </div>
+      </script>
+        <div id="asideUserOrganizations">
+          <h3>Organizations</h3>
+          <div id="userOrganizationsGrid">
+            <script type="text/template" class="template" id="userOrgsTemplate">
+              <a href="#"><img src="<%= avatar_url %>"></a>
+            </script>
+          </div>
+        </div>
+    </aside>
+    <main>
+      <div id="mainNav">
+        <div id="mainNavTabs">
+          <div id="contributionsTab">
+            <div class="tabIcon">
+              <span class="mega-octicon octicon-diff-added"></span>
+            </div>
+            <div class="tabText">
+              Contributions
+            </div>
+          </div>
+          <div id="repositoriesTab" class="selectedTab">
+            <div class="tabIcon">
+              <span class="mega-octicon octicon-repo"></span>
+            </div>
+            <div class="tabText">
+              Repositories
+            </div>
+          </div>
+          <div id="publicActivityTab">
+            <div class="tabIcon">
+              <span class="mega-octicon octicon-rss"></span>
+            </div>
+            <div class="tabText">
+              Public Activity
+            </div>
+          </div>
+          <button value="editProfile">
+            <span class="mega-octicon octicon-pencil"></span>
+            Edit Profile
+          </button>
+        </div><!-- mainNavTabs -->
+      </div><!-- mainNav -->
+      <div class="tabMain contributionsMain">
+        Contributions
+      </div>
+      <div class="tabMain repositoriesMain openTabMain">
+        <div id="repoNav">
+          <div id="repoNavLeft">
+            <input type="text" placeholder="Find a repository..."></input>
+            <button value="search">Search</button>
+          </div>
+          <div id="repoNavRight">
+            <a href="#" class="activeFilter">All</a>
+            <a href="#">Public</a>
+            <a href="#">Private</a>
+            <a href="#">Sources</a>
+            <a href="#">Forks</a>
+            <a href="#">Mirrors</a>
+            <button value="new">
+              <span class="mega-octicon octicon-repo"></span>
+              New
+            </button>
+          </div>
+        </div><!-- repoNav -->
+        <div id="repoMain">
+          <script type="text/template" class="template" id="repoBlockTemplate">
+            <div class="repoBlock">
+              <div class="repoBlockLeft">
+                <div class="repoBlockTitle">
+                  <%= name %>
+                </div>
+                <% if (fork === true) { %>
+                <div class="repoBlockFork">
+                  <span class="mega-octicon octicon-repo-forked"></span>
+                  forked from <a href="#"><%= forks_url %></a>
+                </div>
+                <% } %>
+                <% if (description !== null) { %>
+                <div class="repoBlockDescription">
+                  <%= description %>
+                </div>
+                <% } %>
+                <div class="repoBlockUpdate">
+                  <%= moment(updated_at).fromNow() %>
+                </div>
+              </div><!-- repoBlockLeft -->
+              <div class="repoBlockRight">
+                <% if (language !== null) { %>
+                <div>
+                  <%= language %>
+                </div>
+                <% } %>
+                <div>
+                  <span class="mega-octicon octicon-star"></span>
+                  <%= stargazers_count %>
+                </div>
+                <div>
+                  <span class="mega-octicon octicon-git-branch"></span>
+                  <%= forks %>
+                </div>
+              </div><!-- repoBlockRight -->
+            </div><!-- repoBlock -->
+          </script>
+        </div>
+      </div>
+      <div class="tabMain publicActivityMain">
+        <script type="text/template" class="template" id="activityBlockTemplate">
+          <div class="activityBlock">
+            <% if (type === "CreateEvent") { %>
+              <div class="activityBlockLeft">
+                <span class="mega-octicon octicon-repo"></span>
+              </div>
+              <div class="activityBlockRight">
+                <a href="#"><%= actor.login %></a>&nbsp;
+                created repository&nbsp;
+                <a href="#"><%= repo.name %></a>&nbsp;
+                &nbsp;<span class="timeAgo"><%= moment(created_at).fromNow() %></span>
+              </div>
+            <% } %>
+            <% if (type === "PushEvent") { %>
+              <div class="activityBlockLeft">
+                <span class="mega-octicon octicon-flame"></span>
+              </div>
+              <div class="activityBlockRight2">
+                <div class="activityTime">
+                  <%= moment(created_at).fromNow() %>
+                </div>
+                <div class="activityAction">
+                  <a href="#"><%= actor.login %></a>
+                  pushed to
+                  <a href="#"><%= payload.master_branch %></a>
+                  at
+                  <a href="#"><%= repo.url %></a>
+                </div>
+                <div class="activityImages">
+                  <div class="activityLarge">
+                    <img src="<%= actor.avatar_url %>">
+                  </div>
+                  <div class="activitySmall">
+                    <img src="<%= actor.avatar_url %>">
+                    <a href="#"><%= payload.push_id %></a>
+                    <span><%= payload.commits.message %></span>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </script>
+      </div>
+    </main>
+  </div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<script src="githubData.js"></script>
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

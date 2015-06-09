@@ -1,0 +1,363 @@
+/*********************
+VARIABLES
+*********************/
+/*********************
+SETUP
+*********************/
+html, body {
+  height: 100%;
+  width: 100%; }
+
+html {
+  font-size: 32px; }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  color: #333333; }
+
+h1, h2, h3, h4, h5, h6, ul, li, p {
+  margin: 0;
+  padding: 0; }
+
+img {
+  max-width: 100%; }
+
+a {
+  color: black;
+  text-decoration: none; }
+  a:hover {
+    color: #4078C0; }
+
+/*********************
+NAV
+*********************/
+#navWrapper {
+  background-color: #F5F5F5;
+  height: 50px;
+  margin-bottom: 20px; }
+  #navWrapper nav {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; }
+    #navWrapper nav > div {
+      height: 50px; }
+    #navWrapper nav #navLeft {
+      width: 65%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+      #navWrapper nav #navLeft > div {
+        display: flex;
+        align-items: center;
+        font-size: .4rem;
+        font-weight: bold; }
+        #navWrapper nav #navLeft > div > input {
+          font-size: .40rem;
+          width: 360px;
+          height: 30px;
+          border-radius: 5px;
+          border: 1px solid #CCCCCC;
+          padding: 3.5px; }
+    #navWrapper nav #navRight {
+      width: 28.5%;
+      display: flex;
+      justify-content: space-around; }
+      #navWrapper nav #navRight #navProfile a {
+        display: flex;
+        align-items: center; }
+        #navWrapper nav #navRight #navProfile a div {
+          height: 50px;
+          display: flex;
+          align-items: center; }
+          #navWrapper nav #navRight #navProfile a div:first-child {
+            margin-right: 5px; }
+          #navWrapper nav #navRight #navProfile a div img {
+            height: 20px;
+            width: 20px;
+            border-radius: 5px; }
+      #navWrapper nav #navRight > div {
+        height: 50px;
+        font-size: .4rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        #navWrapper nav #navRight > div > .downArrow span {
+          font-size: .45rem; }
+        #navWrapper nav #navRight > div > a span {
+          font-size: .65rem; }
+        #navWrapper nav #navRight > div .octicon-sign-out {
+          font-size: .57rem; }
+
+/*********************
+PAGE
+*********************/
+#pageWrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between; }
+
+/*********************
+ASIDE
+*********************/
+aside {
+  width: 24%; }
+  aside > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #F5F5F5; }
+    aside > div:first-child {
+      padding-top: 0; }
+    aside > div:last-child {
+      padding-bottom: 0;
+      border-bottom: none; }
+  aside #asideUserImage a img {
+    border-radius: 5px; }
+  aside #asideUserRealName {
+    font-size: .9rem;
+    font-weight: bold; }
+  aside #asideUserAccountName {
+    font-size: .75rem;
+    color: #666666;
+    font-weight: lighter; }
+  aside #asideUserCareer {
+    display: flex;
+    align-items: center; }
+    aside #asideUserCareer > div {
+      display: flex;
+      align-items: center; }
+      aside #asideUserCareer > div:first-child {
+        margin-right: 10px; }
+      aside #asideUserCareer > div > span {
+        font-size: .6rem;
+        color: #CCCCCC; }
+      aside #asideUserCareer > div > a {
+        font-size: .45rem;
+        color: #4078C0; }
+  aside #asideUserThings {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
+    aside #asideUserThings > div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; }
+      aside #asideUserThings > div > div {
+        font-size: .45rem; }
+        aside #asideUserThings > div > div a {
+          color: #4078C0; }
+        aside #asideUserThings > div > div:first-child {
+          margin-right: 10px; }
+        aside #asideUserThings > div > div > span {
+          font-size: .6rem;
+          color: #CCCCCC; }
+  aside #asideUserStats {
+    display: flex;
+    justify-content: space-around; }
+    aside #asideUserStats > a {
+      text-align: center; }
+      aside #asideUserStats > a:hover .userStatsText {
+        color: #4078C0; }
+    aside #asideUserStats .userStatsNumber {
+      color: #4078C0; }
+    aside #asideUserStats .userStatsText {
+      font-size: .35rem;
+      color: #666666; }
+  aside #asideUserOrganizations h3 {
+    font-size: .6rem;
+    margin-bottom: 15px; }
+  aside #asideUserOrganizations #userOrganizationsGrid a {
+    display: inline-block;
+    width: 22%;
+    max-height: 50px;
+    margin-bottom: 10px; }
+
+/*********************
+MAIN
+*********************/
+main {
+  width: 74%; }
+  main #mainNav {
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 20px; }
+    main #mainNav #mainNavTabs {
+      display: flex;
+      margin-bottom: -1px;
+      position: relative; }
+      main #mainNav #mainNavTabs > div {
+        display: flex;
+        font-size: .55rem;
+        padding: 8px 12px;
+        cursor: pointer; }
+        main #mainNav #mainNavTabs > div > div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #666666; }
+      main #mainNav #mainNavTabs > button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: .45rem;
+        height: 30px; }
+        main #mainNav #mainNavTabs > button > span {
+          font-size: .45rem; }
+    main #mainNav .selectedTab {
+      border: 1px solid #CCCCCC;
+      border-bottom: 1px solid white;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px; }
+    main #mainNav .tabIcon {
+      margin-right: 5px; }
+      main #mainNav .tabIcon span {
+        font-size: .5rem; }
+
+/*********************
+MAIN TABS
+*********************/
+.tabMain {
+  display: none; }
+
+.openTabMain {
+  display: block; }
+
+/*********************
+CONTRIBUTIONS TAB
+*********************/
+/*********************
+REPO TAB
+*********************/
+#repoNav {
+  font-size: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px; }
+  #repoNav #repoNavLeft {
+    height: 100%;
+    width: 45%; }
+    #repoNav #repoNavLeft input {
+      width: 260px;
+      height: 100%;
+      padding: 8px 5px; }
+    #repoNav #repoNavLeft button {
+      position: relative;
+      top: -1px;
+      height: 100%; }
+  #repoNav #repoNavRight {
+    height: 100%;
+    width: 52.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    #repoNav #repoNavRight .activeFilter {
+      color: #333333;
+      font-weight: bold; }
+    #repoNav #repoNavRight a {
+      color: #4078C0; }
+    #repoNav #repoNavRight button {
+      margin-left: 10px;
+      height: 100%;
+      background-color: #6AC04D;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      padding: 0 10px; }
+      #repoNav #repoNavRight button span {
+        font-size: .5rem; }
+        #repoNav #repoNavRight button span:before {
+          color: white; }
+
+#repoMain {
+  border-top: 1px solid #CCCCCC;
+  margin-top: 15px; }
+  #repoMain .repoBlock {
+    position: relative;
+    padding: 0 0 25px 0;
+    margin-top: 25px;
+    border-bottom: 1px solid #CCCCCC;
+    font-size: .5rem; }
+    #repoMain .repoBlock .repoBlockLeft > div {
+      margin-bottom: 12.5px;
+      color: #666666; }
+    #repoMain .repoBlock .repoBlockLeft .repoBlockTitle {
+      font-size: .8rem;
+      font-weight: bold;
+      color: #4078C0; }
+    #repoMain .repoBlock .repoBlockLeft .repoBlockFork {
+      font-size: .45rem; }
+      #repoMain .repoBlock .repoBlockLeft .repoBlockFork a {
+        color: #4078C0; }
+      #repoMain .repoBlock .repoBlockLeft .repoBlockFork span {
+        font-size: .45rem;
+        margin-right: 7.5px; }
+    #repoMain .repoBlock .repoBlockLeft .repoBlockDescription {
+      color: #333333; }
+    #repoMain .repoBlock .repoBlockLeft .repoBlockUpdate {
+      font-size: .45rem; }
+    #repoMain .repoBlock .repoBlockRight {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around; }
+      #repoMain .repoBlock .repoBlockRight > div:first-child {
+        margin-left: 0; }
+      #repoMain .repoBlock .repoBlockRight > div {
+        margin-left: 12.5px; }
+        #repoMain .repoBlock .repoBlockRight > div > span {
+          font-size: .55rem;
+          /* margin-right: 2px; */ }
+          #repoMain .repoBlock .repoBlockRight > div > span:before {
+            color: #666666; }
+
+/*********************
+ACTIVITY TAB
+*********************/
+.activityBlock {
+  display: flex;
+  padding: 20px 0;
+  border-bottom: 1px solid #CCCCCC; }
+  .activityBlock a {
+    color: #4078C0; }
+  .activityBlock .activityBlockLeft {
+    width: 10%;
+    text-align: center; }
+  .activityBlock .activityBlockRight {
+    font-size: .5rem;
+    display: flex;
+    align-items: center; }
+    .activityBlock .activityBlockRight .timeAgo {
+      color: #666666;
+      font-size: .45rem; }
+  .activityBlock .activityBlockRight2 {
+    font-size: .5rem;
+    display: flex;
+    flex-direction: column; }
+    .activityBlock .activityBlockRight2 a {
+      color: #4078C0; }
+    .activityBlock .activityBlockRight2 > div {
+      margin-bottom: 10px; }
+    .activityBlock .activityBlockRight2 .activityTime {
+      font-size: .45rem;
+      color: #666666; }
+    .activityBlock .activityBlockRight2 .activityImages {
+      display: flex; }
+      .activityBlock .activityBlockRight2 .activityImages .activityLarge {
+        margin-right: 10px; }
+        .activityBlock .activityBlockRight2 .activityImages .activityLarge img {
+          width: 36px;
+          height: 36px; }
+      .activityBlock .activityBlockRight2 .activityImages .activitySmall {
+        display: flex;
+        font-size: .45rem; }
+        .activityBlock .activityBlockRight2 .activityImages .activitySmall > * {
+          margin-right: 7.5px; }
+        .activityBlock .activityBlockRight2 .activityImages .activitySmall img {
+          width: 18px;
+          height: 18px; }
+
+/*# sourceMappingURL=styles.css.map */
