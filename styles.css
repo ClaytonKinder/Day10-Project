@@ -24,10 +24,14 @@ img {
   max-width: 100%; }
 
 a {
-  color: black;
+  color: #333333;
   text-decoration: none; }
   a:hover {
     color: #4078C0; }
+    a:hover > * {
+      color: #4078C0; }
+      a:hover > *:before {
+        color: #4078C0; }
 
 /*********************
 NAV
@@ -170,7 +174,7 @@ aside {
     margin-bottom: 15px; }
   aside #asideUserOrganizations #userOrganizationsGrid a {
     display: inline-block;
-    width: 22%;
+    width: 20%;
     max-height: 50px;
     margin-bottom: 10px; }
 
@@ -260,11 +264,26 @@ REPO TAB
     #repoNav #repoNavRight button {
       margin-left: 10px;
       height: 100%;
-      background-color: #6AC04D;
-      border: 0;
-      border-radius: 5px;
-      color: white;
-      padding: 0 10px; }
+      border: 1px solid #8bcf54;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-family: arial, helvetica, sans-serif;
+      padding: 10px 10px 10px 10px;
+      text-decoration: none;
+      display: inline-block;
+      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      color: #FFFFFF;
+      background-color: #a9db80;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#a9db80), to(#96c56f));
+      background-image: -webkit-linear-gradient(top, #a9db80, #96c56f);
+      background-image: -moz-linear-gradient(top, #a9db80, #96c56f);
+      background-image: -ms-linear-gradient(top, #a9db80, #96c56f);
+      background-image: -o-linear-gradient(top, #a9db80, #96c56f);
+      background-image: linear-gradient(to bottom, #a9db80, #96c56f);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#a9db80, endColorstr=#96c56f); }
       #repoNav #repoNavRight button span {
         font-size: .5rem; }
         #repoNav #repoNavRight button span:before {
@@ -286,7 +305,7 @@ REPO TAB
       font-size: .8rem;
       font-weight: bold;
       color: #4078C0; }
-      #repoMain .repoBlock .repoBlockLeft .repoBlockTitle a {
+      #repoMain .repoBlock .repoBlockLeft .repoBlockTitle > a {
         color: #4078C0; }
     #repoMain .repoBlock .repoBlockLeft .repoBlockFork {
       font-size: .45rem; }
@@ -319,6 +338,23 @@ REPO TAB
 /*********************
 ACTIVITY TAB
 *********************/
+.publicActivityMain {
+  position: relative; }
+  .publicActivityMain #rssButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #F37538;
+    display: flex;
+    justify-content: center;
+    padding: 2.5px;
+    border-radius: 2.5px;
+    width: 22px; }
+    .publicActivityMain #rssButton > span {
+      font-size: .55rem; }
+      .publicActivityMain #rssButton > span:before {
+        color: white; }
+
 .activityBlock {
   display: flex;
   padding: 20px 0;
