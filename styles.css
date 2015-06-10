@@ -399,5 +399,8 @@ ACTIVITY TAB
         .activityBlock .activityBlockRight2 .activityImages .activitySmall img {
           width: 18px;
           height: 18px; }
+        .activityBlock .activityBlockRight2 .activityImages .activitySmall span {
+          color: #666666;
+          font-size: .40rem; }
 
 /*# sourceMappingURL=styles.css.map */
